@@ -1,4 +1,4 @@
-{% set version = "0.5.1" %}
+{% set version = "1.0.0" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ryodohemmi/mkgraticule_planet/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: d0f311468bf7cd373ff815266322c243a5320bf203b2b5d472c44bc766ae7e06
+  sha256: 5aa98afff3062d893f20a1ae8c30c0dd2b7b95cc72736ebc1a264392a5115b0a
 
 build:
   noarch: python
@@ -37,7 +37,7 @@ test:
 
 about:
   home: https://github.com/ryodohemmi/mkgraticule_planet
-  summary: Create planetary graticules for IAU coordinate systems and export as GeoPackage
+  summary: Create planetary-scale graticules with multi-format labels for any GDAL/PROJ-supported CRS — exported as GeoPackage or SpatiaLite
   license: Apache-2.0
   license_file: LICENSE
 
