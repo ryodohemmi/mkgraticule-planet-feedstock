@@ -1,4 +1,4 @@
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 {% set python_min = "3.9" %}
 
 package:
@@ -7,14 +7,15 @@ package:
 
 source:
   url: https://github.com/ryodohemmi/mkgraticule_planet/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 5aa98afff3062d893f20a1ae8c30c0dd2b7b95cc72736ebc1a264392a5115b0a
+  sha256: d608a0b075226390d36093c4125817f706986edabf53bfa13e43ffada51d591b
 
 build:
   noarch: python
   number: 0
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
-    - mkgraticule_planet = mkgraticule_planet._cli:main
+    - mkgraticule = mkgraticule_planet.cli:main
+    - mkgraticule_planet = mkgraticule_planet.cli:main
 
 requirements:
   host:
@@ -32,6 +33,7 @@ test:
   imports:
     - mkgraticule_planet
   commands:
+    - mkgraticule --help
     - mkgraticule_planet --version
     - mkgraticule_planet --help
 
